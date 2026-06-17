@@ -2,6 +2,7 @@ package com.send.bulk_mailer.service;
 
 import com.opencsv.CSVReader;
 import com.send.bulk_mailer.model.User;
+import com.send.bulk_mailer.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
@@ -11,6 +12,12 @@ import java.util.List;
 
 @Service
 public class CsvService {
+
+    private final UserRepository userRepository;
+
+    public CsvService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public List<User> readUsers() {
 
