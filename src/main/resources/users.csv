@@ -1,0 +1,4 @@
+name,email,brandName,sendMail
+John,john@gmail.com,Apple,YES
+Sarah,sarah@gmail.com,Microsoft,NO
+Mike,mike@gmail.com,Google,YES
