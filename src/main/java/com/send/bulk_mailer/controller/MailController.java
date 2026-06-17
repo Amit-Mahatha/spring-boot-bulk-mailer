@@ -30,4 +30,10 @@ public class MailController {
     public List<User> getUsers() {
         return csvService.readUsers();
     }
+
+    @GetMapping("/eligible-users")
+    public List<User> getEligibleUsers() {
+
+        return csvService.getEligibleUsers();
+    }
 }
