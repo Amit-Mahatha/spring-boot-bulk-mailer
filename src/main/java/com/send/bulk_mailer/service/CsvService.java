@@ -79,4 +79,14 @@ public class CsvService {
 
         return eligibleUsers;
     }
+
+    public List<User> getAllUsersFromDb() {
+
+        return userRepository.findAll();
+    }
+
+    public List<User> getEligibleUsersFromDb() {
+
+        return userRepository.findBySendMailIgnoreCaseOrderByIdAsc("YES");
+    }
 }

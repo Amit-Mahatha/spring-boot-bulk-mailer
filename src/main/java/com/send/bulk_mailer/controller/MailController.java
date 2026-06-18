@@ -31,14 +31,15 @@ public class MailController {
         return mailService.getMessage();
     }
 
+
     @GetMapping("/users")
     public List<User> getUsers() {
-        return csvService.readUsers();
+        return csvService.getAllUsersFromDb();
     }
 
     @GetMapping("/eligible-users")
     public List<User> getEligibleUsers() {
-        return csvService.getEligibleUsers();
+        return csvService.getEligibleUsersFromDb();
     }
 
     @GetMapping("/preview-email")
@@ -46,9 +47,10 @@ public class MailController {
 
         User user =
                 csvService
-                        .getEligibleUsers()
+                        .getEligibleUsersFromDb()
                         .get(0);
 
         return templateService.generateEmail(user);
     }
+
 }
