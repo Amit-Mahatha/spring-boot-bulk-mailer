@@ -23,4 +23,6 @@ public class User {
     private String brandName;
 
     private String sendMail;
+
+    private Boolean emailSent = false;
 }

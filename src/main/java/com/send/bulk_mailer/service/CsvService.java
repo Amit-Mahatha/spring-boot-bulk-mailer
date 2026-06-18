@@ -89,4 +89,17 @@ public class CsvService {
 
         return userRepository.findBySendMailIgnoreCaseOrderByIdAsc("YES");
     }
+
+    public List<User> getPendingUsers() {
+
+        return userRepository
+                .findBySendMailIgnoreCaseAndEmailSentFalse("YES");
+    }
+
+    public void markAsSent(User user) {
+
+        user.setEmailSent(true);
+
+        userRepository.save(user);
+    }
 }
