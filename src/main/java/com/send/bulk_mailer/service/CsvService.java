@@ -62,23 +62,7 @@ public class CsvService {
         return users;
     }
 
-    public List<User> getEligibleUsers() {
 
-        List<User> allUsers = readUsers();
-
-        List<User> eligibleUsers = new ArrayList<>();
-
-        for (User user : allUsers) {
-
-            if ("YES".equalsIgnoreCase(user.getSendMail())) {
-
-                eligibleUsers.add(user);
-
-            }
-        }
-
-        return eligibleUsers;
-    }
 
     public List<User> getAllUsersFromDb() {
 
